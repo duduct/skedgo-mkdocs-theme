@@ -1,1 +1,1 @@
-recursive-include skedgo_mkdocs_theme *.html *.yml *.css *.js *.svg *.png
+recursive-include skedgo_mkdocs_theme *.html *.yml *.css *.js *.svg *.png *.woff *.ttf *.json
