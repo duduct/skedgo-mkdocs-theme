@@ -1,0 +1,5 @@
+include LICENSE
+include README.md
+recursive-include skedgo_mkdocs_theme *.ico *.js *.css *.png *.html *.eot *.svg *.ttf *.woff *.woff2
+recursive-exclude * __pycache__
+recursive-exclude * *.py[co]
