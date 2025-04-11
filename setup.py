@@ -8,7 +8,7 @@ setup(
     long_description_content_type="text/markdown",
     author="Duy Luong",
     author_email="luongducduy.cantho@gmail.com",
-    url="https://github.com/yourusername/mkdocs-your-theme-name",
+    url="https://github.com/duduct/skedgo-mkdocs-theme",
     packages=find_packages(),
     include_package_data=True,
     install_requires=[
