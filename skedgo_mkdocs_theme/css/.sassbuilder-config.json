@@ -1,11 +1,11 @@
 {
-    "project_path": "/Users/duyluong/Documents/GitHub/tripgo-api/skedgo_theme/css",
-	"output_path": "/Users/duyluong/Documents/GitHub/tripgo-api/skedgo_theme/css",
+	"project_path": "",
+	"output_path": "",
 	"options": {
-		"cache":         true,
-		"debug":         false,
+		"cache": true,
+		"debug": false,
 		"line-comments": false,
-		"line-numbers":  false,
-		"style":         "compressed"
+		"line-numbers": false,
+		"style": "compressed"
 	}
 }
