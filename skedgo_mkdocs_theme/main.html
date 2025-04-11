@@ -15,77 +15,77 @@
 		<link
 			rel="apple-touch-icon"
 			sizes="57x57"
-			href="{{ base_url }}/img/favicon/apple-icon-57x57.png"
+			href="{{ 'img/favicon/apple-icon-57x57.png'|url }}"
 		/>
 		<link
 			rel="apple-touch-icon"
 			sizes="60x60"
-			href="{{ base_url }}/img/favicon/apple-icon-60x60.png"
+			href="{{ 'img/favicon/apple-icon-60x60.png'|url }}"
 		/>
 		<link
 			rel="apple-touch-icon"
 			sizes="72x72"
-			href="{{ base_url }}/img/favicon/apple-icon-72x72.png"
+			href="{{ 'img/favicon/apple-icon-72x72.png'|url }}"
 		/>
 		<link
 			rel="apple-touch-icon"
 			sizes="76x76"
-			href="{{ base_url }}/img/favicon/apple-icon-76x76.png"
+			href="{{ 'img/favicon/apple-icon-76x76.png'|url }}"
 		/>
 		<link
 			rel="apple-touch-icon"
 			sizes="114x114"
-			href="{{ base_url }}/img/favicon/apple-icon-114x114.png"
+			href="{{ 'img/favicon/apple-icon-114x114.png'|url }}"
 		/>
 		<link
 			rel="apple-touch-icon"
 			sizes="120x120"
-			href="{{ base_url }}/img/favicon/apple-icon-120x120.png"
+			href="{{ 'img/favicon/apple-icon-120x120.png'|url }}"
 		/>
 		<link
 			rel="apple-touch-icon"
 			sizes="144x144"
-			href="{{ base_url }}/img/favicon/apple-icon-144x144.png"
+			href="{{ 'img/favicon/apple-icon-144x144.png'|url }}"
 		/>
 		<link
 			rel="apple-touch-icon"
 			sizes="152x152"
-			href="{{ base_url }}/img/favicon/apple-icon-152x152.png"
+			href="{{ 'img/favicon/apple-icon-152x152.png'|url }}"
 		/>
 		<link
 			rel="apple-touch-icon"
 			sizes="180x180"
-			href="{{ base_url }}/img/favicon/apple-icon-180x180.png"
+			href="{{ 'img/favicon/apple-icon-180x180.png'|url }}"
 		/>
 		<link
 			rel="icon"
 			type="image/png"
 			sizes="192x192"
-			href="{{ base_url }}/img/favicon/android-icon-192x192.png"
+			href="{{ 'img/favicon/android-icon-192x192.png'|url }}"
 		/>
 		<link
 			rel="icon"
 			type="image/png"
 			sizes="32x32"
-			href="{{ base_url }}/img/favicon/favicon-32x32.png"
+			href="{{ 'img/favicon/favicon-32x32.png'|url }}"
 		/>
 		<link
 			rel="icon"
 			type="image/png"
 			sizes="96x96"
-			href="{{ base_url }}/img/favicon/favicon-96x96.png"
+			href="{{ 'img/favicon/favicon-96x96.png'|url }}"
 		/>
 		<link
 			rel="icon"
 			type="image/png"
 			sizes="16x16"
-			href="{{ base_url }}/img/favicon/favicon-16x16.png"
+			href="{{ 'img/favicon/favicon-16x16.png'|url }}"
 		/>
-		<link rel="manifest" href="{{ base_url }}/img/favicon/manifest.json" />
+		<link rel="manifest" href="{{ 'img/favicon/manifest.json'|url }}" />
 		<meta name="msapplication-TileColor" content="#154c7b" />
 		<meta
 			name="msapplication-TileImage"
-			content="{{ base_url }}/img/favicon/ms-icon-144x144.png"
+			content="{{ 'img/favicon/ms-icon-144x144.png'|url }}"
 		/>
 		<meta name="theme-color" content="#154c7b" />
 		{%- endblock %} {%- block htmltitle %}
@@ -95,7 +95,7 @@
 		</title>
 		{%- endblock %}
 
-		<link rel="stylesheet" href="{{ base_url }}/css/main-above.css" />
+		<link rel="stylesheet" href="{{ 'css/main-above.css'|url }}" />
 
 		{%- block libs %}
 		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -133,7 +133,7 @@
 		</div>
 		{% include "navbar-bottom.html" %} {% include "footer.html" %} {%- block
 		styles %}
-		<link rel="stylesheet" href="{{ base_url }}/css/main.css" />
+		<link rel="stylesheet" href="{{ 'css/main.css'|url }}" />
 		<link
 			rel="stylesheet"
 			href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"
@@ -144,7 +144,7 @@
 		</script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-		<script src="{{ base_url }}/js/app.min.js"></script>
+		<script src="{{ 'js/app.min.js'|url }}"></script>
 		{%- for path in extra_javascript %}
 		<script src="{{ path }}"></script>
 		{%- endfor %}
