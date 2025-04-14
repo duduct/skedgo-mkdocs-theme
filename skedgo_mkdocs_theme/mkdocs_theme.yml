@@ -2,3 +2,5 @@
 
 include_search_page: false
 search_index_only: false
+
+hljs_style: github
