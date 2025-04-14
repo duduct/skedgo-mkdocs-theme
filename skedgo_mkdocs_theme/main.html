@@ -99,7 +99,12 @@
 
 		{%- for path in config.extra_css %}
 		<link href="{{ path|url }}" rel="stylesheet" />
-		{%- endfor %} {%- block libs %}
+		{%- endfor %} {%- if config.theme.highlightjs %}
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/{{ config.theme.hljs_style }}.min.css"
+		/>
+		{%- endif %} {%- block libs %}
 		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!--[if lt IE 9]>
 			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
