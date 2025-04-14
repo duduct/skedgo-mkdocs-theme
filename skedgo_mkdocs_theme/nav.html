@@ -1,9 +1,10 @@
 <header class="navbar">
+	{% if 'search' in config['plugins'] %}
 	<div class="search-container">
 		<a class="search" href="#"></a>
-		{% if 'search' in config['plugins'] %}{%- include "search-modal.html"
-		%}{% endif %}
+		{%- include "search-modal.html" %}
 	</div>
+	{% endif %}
 	<div class="container-fluid flex">
 		{%- block homelink %}
 		<a class="logo" href="{{ nav.homepage.url|url }}">
@@ -24,7 +25,10 @@
 				<span class="bar-3"></span>
 			</div>
 		</a>
-		<div class="menu" aria-hidden="false">
+		<div
+			class="menu {% if 'search' not in config.plugins %}-no-search{% endif %}"
+			aria-hidden="false"
+		>
 			{% if nav|length>1 %}
 			<ul>
 				{% for nav_item in nav %} {% if nav_item.children %}
