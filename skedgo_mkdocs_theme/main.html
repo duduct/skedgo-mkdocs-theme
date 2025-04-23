@@ -1,158 +1,183 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		{%- block site_meta %}
-		<meta charset="utf-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		{% if page and page.is_homepage %}
-		<meta name="description" content="{{ config['site_description'] }}" />
-		{% endif %} {% if config.site_author %}
-		<meta name="author" content="{{ config.site_author }}" />
-		{% endif %} {% if page and page.canonical_url %}
-		<link rel="canonical" href="{{ page.canonical_url }}" />
-		{% endif %} {%- endblock %} {%- block favicon %}
-		<link
-			rel="apple-touch-icon"
-			sizes="57x57"
-			href="{{ 'img/favicon/apple-icon-57x57.png'|url }}"
-		/>
-		<link
-			rel="apple-touch-icon"
-			sizes="60x60"
-			href="{{ 'img/favicon/apple-icon-60x60.png'|url }}"
-		/>
-		<link
-			rel="apple-touch-icon"
-			sizes="72x72"
-			href="{{ 'img/favicon/apple-icon-72x72.png'|url }}"
-		/>
-		<link
-			rel="apple-touch-icon"
-			sizes="76x76"
-			href="{{ 'img/favicon/apple-icon-76x76.png'|url }}"
-		/>
-		<link
-			rel="apple-touch-icon"
-			sizes="114x114"
-			href="{{ 'img/favicon/apple-icon-114x114.png'|url }}"
-		/>
-		<link
-			rel="apple-touch-icon"
-			sizes="120x120"
-			href="{{ 'img/favicon/apple-icon-120x120.png'|url }}"
-		/>
-		<link
-			rel="apple-touch-icon"
-			sizes="144x144"
-			href="{{ 'img/favicon/apple-icon-144x144.png'|url }}"
-		/>
-		<link
-			rel="apple-touch-icon"
-			sizes="152x152"
-			href="{{ 'img/favicon/apple-icon-152x152.png'|url }}"
-		/>
-		<link
-			rel="apple-touch-icon"
-			sizes="180x180"
-			href="{{ 'img/favicon/apple-icon-180x180.png'|url }}"
-		/>
-		<link
-			rel="icon"
-			type="image/png"
-			sizes="192x192"
-			href="{{ 'img/favicon/android-icon-192x192.png'|url }}"
-		/>
-		<link
-			rel="icon"
-			type="image/png"
-			sizes="32x32"
-			href="{{ 'img/favicon/favicon-32x32.png'|url }}"
-		/>
-		<link
-			rel="icon"
-			type="image/png"
-			sizes="96x96"
-			href="{{ 'img/favicon/favicon-96x96.png'|url }}"
-		/>
-		<link
-			rel="icon"
-			type="image/png"
-			sizes="16x16"
-			href="{{ 'img/favicon/favicon-16x16.png'|url }}"
-		/>
-		<link rel="manifest" href="{{ 'img/favicon/manifest.json'|url }}" />
-		<meta name="msapplication-TileColor" content="#154c7b" />
-		<meta
-			name="msapplication-TileImage"
-			content="{{ 'img/favicon/ms-icon-144x144.png'|url }}"
-		/>
-		<meta name="theme-color" content="#154c7b" />
-		{%- endblock %} {%- block htmltitle %}
-		<title>
-			{% if page and page.title and not page.is_homepage %}{{ page.title
-			}} - {% endif %}{{ config.site_name }}
-		</title>
-		{%- endblock %}
+<!doctype html>
+<html lang="{{ config.theme.locale|default('en') }}">
+  <head>
+    {%- block site_meta %}
+      <meta charset="utf-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-		<link rel="stylesheet" href="{{ 'css/main-above.css'|url }}" />
+      {% if page and page.is_homepage %}
+        <meta name="description" content="{{ config['site_description'] }}" />
+      {% endif %}
 
-		{%- for path in config.extra_css %}
-		<link href="{{ path|url }}" rel="stylesheet" />
-		{%- endfor %} {%- block libs %}
-		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-		<!--[if lt IE 9]>
-			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-			<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-		<![endif]-->
+      {% if config.site_author %}
+        <meta name="author" content="{{ config.site_author }}" />
+      {% endif %}
 
-		{%- endblock %} {%- block analytics %}
-		<script
-			async
-			src="https://www.googletagmanager.com/gtag/js?id=G-C12N56MG8C"
-		></script>
-		<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag() {
-				dataLayer.push(arguments);
-			}
-			gtag("js", new Date());
+      {% if page and page.canonical_url %}
+        <link rel="canonical" href="{{ page.canonical_url }}" />
+      {% endif %}
+    {%- endblock %}
 
-			gtag("config", "G-C12N56MG8C");
-		</script>
-		{%- endblock %} {%- block extrahead %} {% endblock %}
-	</head>
-	<body {% if page and page.is_homepage %} class="homepage" {% endif %}>
-		{% include "nav.html" %}
+    {%- block favicon %}
+      <link
+        rel="apple-touch-icon"
+        sizes="57x57"
+        href="{{ 'img/favicon/apple-icon-57x57.png'|url }}"
+      />
+      <link
+        rel="apple-touch-icon"
+        sizes="60x60"
+        href="{{ 'img/favicon/apple-icon-60x60.png'|url }}"
+      />
+      <link
+        rel="apple-touch-icon"
+        sizes="72x72"
+        href="{{ 'img/favicon/apple-icon-72x72.png'|url }}"
+      />
+      <link
+        rel="apple-touch-icon"
+        sizes="76x76"
+        href="{{ 'img/favicon/apple-icon-76x76.png'|url }}"
+      />
+      <link
+        rel="apple-touch-icon"
+        sizes="114x114"
+        href="{{ 'img/favicon/apple-icon-114x114.png'|url }}"
+      />
+      <link
+        rel="apple-touch-icon"
+        sizes="120x120"
+        href="{{ 'img/favicon/apple-icon-120x120.png'|url }}"
+      />
+      <link
+        rel="apple-touch-icon"
+        sizes="144x144"
+        href="{{ 'img/favicon/apple-icon-144x144.png'|url }}"
+      />
+      <link
+        rel="apple-touch-icon"
+        sizes="152x152"
+        href="{{ 'img/favicon/apple-icon-152x152.png'|url }}"
+      />
+      <link
+        rel="apple-touch-icon"
+        sizes="180x180"
+        href="{{ 'img/favicon/apple-icon-180x180.png'|url }}"
+      />
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="192x192"
+        href="{{ 'img/favicon/android-icon-192x192.png'|url }}"
+      />
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="32x32"
+        href="{{ 'img/favicon/favicon-32x32.png'|url }}"
+      />
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="96x96"
+        href="{{ 'img/favicon/favicon-96x96.png'|url }}"
+      />
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="16x16"
+        href="{{ 'img/favicon/favicon-16x16.png'|url }}"
+      />
+      <link rel="manifest" href="{{ 'img/favicon/manifest.json'|url }}" />
+      <meta name="msapplication-TileColor" content="#154c7b" />
+      <meta
+        name="msapplication-TileImage"
+        content="{{ 'img/favicon/ms-icon-144x144.png'|url }}"
+      />
+      <meta name="theme-color" content="#154c7b" />
+    {%- endblock %}
 
-		<div class="container -layout-3-9">
-			{%- block content %}
-			<div class="col" role="complementary">{% include "toc.html" %}</div>
-			<div class="col content" role="main">
-				{% include "content.html" %}
-			</div>
-			{%- endblock %}
-		</div>
-		{% include "navbar-bottom.html" %} {% include "footer.html" %} {%- block
-		styles %}
-		<link rel="stylesheet" href="{{ 'css/main.css'|url }}" />
-		<link
-			rel="stylesheet"
-			href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"
-		/>
-		{%- endblock %} {%- block scripts %}
-		<script>
-			var base_url = "{{ base_url }}";
-		</script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-		<script src="{{ 'js/app.min.js'|url }}"></script>
-		{%- for path in extra_javascript %}
-		<script src="{{ path }}"></script>
-		{%- endfor %}
-		<script>
-			hljs.initHighlightingOnLoad();
-		</script>
-		{%- endblock %}
-	</body>
+    {%- block htmltitle %}
+      <title>
+        {% if page and page.title and not page.is_homepage %}
+          {{ page.title }}
+          -
+        {% endif %}{{ config.site_name }}
+      </title>
+    {%- endblock %}
+
+    {%- block styles %}
+      <link rel="stylesheet" href="{{ 'css/main.css'|url }}" />
+
+      <link rel="stylesheet" href="{{ 'css/main-above.css'|url }}" />
+      <link
+        rel="stylesheet"
+        href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/{{ config.theme.hljs_style }}.min.css"
+      />
+    {%- endblock %}
+
+    {%- for path in config.extra_css %}
+      <link href="{{ path|url }}" rel="stylesheet" />
+    {%- endfor %}
+
+    {%- block libs %}
+      <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+      <![endif]-->
+      <script>
+        var base_url = "{{ base_url }}";
+      </script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="{{ 'js/app.min.js'|url }}"></script>
+      {%- for path in extra_javascript %}
+        <script src="{{ path }}"></script>
+      {%- endfor %}
+
+      {%- if config.theme.highlightjs %}
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+
+        {%- for lang in config.theme.hljs_languages %}
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/{{lang}}.min.js"></script>
+        {%- endfor %}
+        <script>
+          hljs.highlightAll();
+        </script>
+      {%- endif %}
+    {%- endblock %}
+
+    {%- block analytics %}
+      <script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-C12N56MG8C"
+      ></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+          dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
+
+        gtag("config", "G-C12N56MG8C");
+      </script>
+    {%- endblock %}
+    {%- block extrahead %}
+    {% endblock %}
+  </head>
+
+  <body {% if page and page.is_homepage %}class="homepage"{% endif %}>
+    {% include "nav.html" %}
+
+    <div class="container -layout-3-9">
+      {%- block content %}
+        <div class="col" role="complementary">{% include "toc.html" %}</div>
+        <div class="col content" role="main">{% include "content.html" %}</div>
+      {%- endblock %}
+    </div>
+
+    {% include "navbar-bottom.html" %}
+    {% include "footer.html" %}
+  </body>
 </html>
