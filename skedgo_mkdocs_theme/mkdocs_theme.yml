@@ -1,6 +1,14 @@
 # Config options for 'mkdocs' theme
 
+locale: en
+
 include_search_page: false
 search_index_only: false
 
+highlightjs: true
+hljs_languages: []
 hljs_style: github
+
+analytics:
+  gtag: null
+  anonymize_ip: false

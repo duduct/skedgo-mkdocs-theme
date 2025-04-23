@@ -1,0 +1,3 @@
+[mkdocs.themes]
+skedgo = skedgo_mkdocs_theme
+
